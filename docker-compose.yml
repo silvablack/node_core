@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    iapy-service:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        environment:
+            NODE_ENV: ${ENVIROMENT}
+            URL_API: ${URL_API}
+            PORT_API: ${PORT_API}
+            URI_DATA: ${URI_DATA}
+            URI_CACHE: ${URI_CACHE}
+            PASSWORD_CACHE: ${PASSWORD_CACHE}
+        env_file: ./.env
+        ports:
+            - "${PORT_API}:${PORT_API}"
+        volumes:
+            - .:/home/app
+            - /home/app/node_modules
+
+    iapy-data:
+        image: mongo
+        restart: always
+        command: mongod
+        volumes:
+            - ./db/iapy:/data/db
+        ports:
+-           "27017:27017"
+
+    iapy-cache:
+        image: "redis:alpine"
+        command: redis-server --requirepass 1234
