@@ -1,4 +1,4 @@
-# Service Complains #
+# API #
 
 [API Documentation](https://documenter.getpostman.com/view/5097449/RWToPHhM)
 
@@ -32,16 +32,16 @@
         `npm run lint`
    
 
-### Access on AWS EC2 ###
+### Entrypoint ###
 
-+ **URL** <http://18.223.203.222:5000/>
++ **URL** <http://*/>
 
-+ **/GET** <http://18.223.203.222:5000/complains>
++ **/GET** <http://*/>
 
-+ **/GET** <http://18.223.203.222:5000/complains/:ID>
++ **/GET** <http://*/>
 
-+ **/POST** <http://18.223.203.222:5000/complains> {title: string(10-50), description: string(50-500), locale.city: string(4-...), locale.state: string(4,...). locale.uf: string(2), company_id: ObjectID, date_created: now()}
++ **/POST** <http://*/>
 
-+ **/PUT** <http://18.223.203.222:5000/complains/:COMPLAINS_ID> {Data: any}
++ **/PUT** <http://*/>
 
-+ **/DELETE** <http://18.223.203.222:5000/complains/:COMPLAINS_ID>
++ **/DELETE** <http://*/>
